@@ -1,0 +1,94 @@
+---
+layout: "@/layouts/BlogPost"
+title: Testing testing 123!
+publishDate: 13 May 2022
+description: Hello world!!! This is an example blog post showcasing some of the cool stuff Astro Cactus theme can do.
+tags: ["example", "blog", "cool"]
+---
+
+import { Image } from "@astrojs/image/components";
+import { Picture } from '@astrojs/image/components';
+
+
+
+## Hello World
+
+Following is an example blog post written in an md file. You can find me @ src/pages/posts/hello-world.md. Here you can add/update/delete details and watch the changes live when running in develop mode.
+
+<Image
+	src="https://picsum.photos/id/1025/550/460"
+	alt="A covered up pug in the woods"
+	width={550}
+	height={460}
+/>
+
+<Picture
+		src={import("src/assets/images/US-map.jpg")}
+		widths={[400, 768]}
+		sizes="(max-width: 767px) 400px, 768px"
+		alt="Post 2 Image"
+		aspectRatio="16:9"
+	  />
+	 
+	 
+	 <Picture
+	   src={import("src/assets/images/egg-meal.jpg")}
+	   widths={[400, 768]}
+	   sizes="(max-width: 767px) 400px, 768px"
+	   alt="Post 2 Image"
+	   aspectRatio="16:9"
+	 />
+
+
+The above map on the US was either served as an .avif or a .webp image format.
+Also I tested the Picture element from @astrojs/image. By using the Picture element I got ```srcset``` values, as shown below, to best fit each visitor's resolution. Everything worked as it should. Astro is off to a great start.
+```
+<picture class="astro-L4E2UYFH">
+	<source type="image/avif" srcset="/_image/assets/images/US-map_400x225.avif 400w,/_image/assets/images/US-map_768x432.avif 768w" class="astro-L4E2UYFH" sizes="(max-width: 767px) 400px, 768px"><source type="image/webp" srcset="/_image/assets/images/US-map_400x225.webp 400w,/_image/assets/images/US-map_768x432.webp 768w" class="astro-L4E2UYFH" sizes="(max-width: 767px) 400px, 768px"><source type="image/jpeg" srcset="/_image/assets/images/US-map_400x225.jpg 400w,/_image/assets/images/US-map_768x432.jpg 768w" class="astro-L4E2UYFH" sizes="(max-width: 767px) 400px, 768px">
+	<img width="768" height="432" src="/_image/assets/images/US-map_768x432.jpg" class="astro-L4E2UYFH" loading="lazy" decoding="async" alt="Post 2 Image">
+</picture>
+```
+
+
+
+
+
+## Using some markdown elements
+
+Here we have a simple js code block.
+
+```js
+let string = "JavaScript syntax highlighting";
+```
+
+This is styled by Shiki, set via the [config](https://docs.astro.build/en/guides/markdown-content/#syntax-highlighting) for Astro.
+
+You can choose your own theme from this [library](https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-themes), which is currently set to Dracula, in the file `astro.config.mjs`.
+
+Here is a horizontal rule.
+
+---
+
+Here is a list:
+
+- Item number 1
+- Item number 2
+- Item number 3
+
+And an ordered list:
+
+1. James Madison
+2. James Monroe
+3. John Quincy Adams
+
+Here is a table:
+
+| Item         | Price | # In stock |
+| ------------ | :---: | ---------: |
+| Juicy Apples | 1.99  |        739 |
+| Bananas      | 1.89  |          6 |
+
+## Tailwind CSS Prose styling
+
+> I'm a simple blockquote.
+> I'm styled by Tailwind CSS prose plugin
