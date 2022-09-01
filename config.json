@@ -1,6 +1,6 @@
 {
   "index_name": "cactus-index",
-  "start_urls": ["https://cactus.paulapplegate.com"],
+  "start_urls": ["https://astrosimpleblog.paulapplegate.com"],
 "selectors": {
       "lvl0": ".page-heading",
       "lvl1": "h1",
